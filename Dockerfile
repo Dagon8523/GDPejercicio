@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 # Usamos el directorio actual como directorio de trabajo
-WORKDIR /api
+WORKDIR /
 
 # Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
@@ -30,4 +30,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para iniciar la API
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
